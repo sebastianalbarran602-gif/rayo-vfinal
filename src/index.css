@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  /* Logo Red color palette */
+  --color-primary-400: #f87171;
+  --color-primary-500: #ef4444;
+  --color-primary-600: #dc2626;
+  
+  /* Overriding hardcoded cyans and oranges across pages to the new red */
+  --color-cyan-400: #f87171;
+  --color-cyan-500: #ef4444;
+  --color-cyan-600: #dc2626;
+  --color-cyan-950: #450a0a;
+  
+  --color-orange-400: #f87171;
+  --color-orange-500: #ef4444;
+  --color-orange-600: #dc2626;
+
+  /* Overriding slate to pure neutral blacks/grays to match logo background */
+  --color-slate-950: #0a0a0a;
+  --color-slate-900: #171717;
+  --color-slate-800: #262626;
+  --color-slate-500: #737373;
+  --color-slate-400: #a3a3a3;
+  --color-slate-300: #d4d4d4;
+  --color-slate-200: #e5e5e5;
+}
+
+@layer base {
+  html, body {
+    @apply bg-slate-950 text-slate-200 antialiased selection:bg-primary-500/30 font-sans;
+  }
+}
+
+/* Glassmorphism utilities */
+@layer utilities {
+  .glass {
+    @apply bg-slate-900/60 backdrop-blur-md border border-white/10 shadow-xl;
+  }
+  .glass-card {
+    @apply bg-slate-800/40 backdrop-blur-md border border-white/5 rounded-2xl shadow-lg transition-all hover:border-primary-500/30 hover:shadow-primary-500/20;
+  }
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-slate-300;
+  }
+}
