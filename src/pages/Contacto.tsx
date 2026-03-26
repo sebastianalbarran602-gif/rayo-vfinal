@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, Send, MessageSquare } from 'lucide-react';
+import { Phone, MapPin, MessageSquare, ArrowRight, MessageCircle } from 'lucide-react';
 
 export default function Contacto() {
   return (
@@ -28,117 +28,79 @@ export default function Contacto() {
             transition={{ delay: 0.2 }}
             className="text-lg text-slate-400"
           >
-            ¿Interesado en un vehículo o requieres atención especializada? Nuestro equipo de asesores está listo para brindarte una solución a la medida.
+            ¿Interesado en un vehículo o requieres atención especializada? Nuestro equipo de asesores está listo para brindarte una solución a la medida por nuestro canal directo.
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
-          {/* Contact Info */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+          {/* WhatsApp Card */}
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
-            className="lg:col-span-2 space-y-6"
+            className="glass-card p-10 flex flex-col items-center text-center relative overflow-hidden"
           >
-            <div className="glass-card p-8 relative overflow-hidden">
-              <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-primary-500/10 blur-[40px] rounded-full pointer-events-none"></div>
-              
-              <h3 className="text-2xl font-bold text-white mb-8">Información de Contacto</h3>
-              
-              <div className="space-y-8">
-                <div className="flex gap-4">
-                  <div className="w-12 h-12 shrink-0 rounded-xl bg-primary-500/10 flex items-center justify-center border border-primary-500/20">
-                    <Phone className="w-6 h-6 text-primary-500" />
-                  </div>
-                  <div>
-                    <h4 className="text-white font-semibold mb-1">Teléfonos</h4>
-                    <p className="text-slate-400 text-sm">Ventas: +52 55 1234 5678</p>
-                    <p className="text-slate-400 text-sm">Servicio: +52 55 8765 4321</p>
-                  </div>
-                </div>
+            <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-[#25D366]/10 blur-[40px] rounded-full pointer-events-none"></div>
 
-                <div className="flex gap-4">
-                  <div className="w-12 h-12 shrink-0 rounded-xl bg-cyan-500/10 flex items-center justify-center border border-cyan-500/20">
-                    <Mail className="w-6 h-6 text-cyan-500" />
-                  </div>
-                  <div>
-                    <h4 className="text-white font-semibold mb-1">Correo Electrónico</h4>
-                    <p className="text-slate-400 text-sm">contacto@elrayomotors.com</p>
-                    <p className="text-slate-400 text-sm">ventas@elrayomotors.com</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="w-12 h-12 shrink-0 rounded-xl bg-orange-500/10 flex items-center justify-center border border-orange-500/20">
-                    <MapPin className="w-6 h-6 text-orange-500" />
-                  </div>
-                  <div>
-                    <h4 className="text-white font-semibold mb-1">Showroom Principal</h4>
-                    <p className="text-slate-400 text-sm leading-relaxed">
-                      Av. Principal 1234<br />
-                      Zona Automotriz Premium<br />
-                      CP 00000, Ciudad de México
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-10 pt-8 border-t border-white/5">
-                <h4 className="text-white font-semibold mb-3">Horario de Atención</h4>
-                <p className="text-slate-400 text-sm">Lunes - Viernes: 09:00 - 18:00</p>
-                <p className="text-slate-400 text-sm">Sábado: 09:00 - 14:00</p>
-              </div>
+            <div className="w-24 h-24 bg-[#25D366]/10 rounded-full flex items-center justify-center mb-6 border border-[#25D366]/30 shadow-[0_0_30px_rgba(37,211,102,0.2)]">
+               <MessageCircle className="w-12 h-12 text-[#25D366]" />
             </div>
+            <h3 className="text-3xl font-bold text-white mb-4">Chat Inmediato</h3>
+            <p className="text-slate-400 mb-10 leading-relaxed">
+              Olvídate de formularios y esperas. La forma más rápida de cotizar tu vehículo, agendar una prueba de manejo o solicitar servicio es enviándonos un WhatsApp.
+            </p>
+            <a 
+              href="https://wa.me/525512345678?text=Hola,%20estoy%20interesado%20en%20los%20servicios%20y%20vehículos%20de%20El%20Rayo%20Motors!" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="w-full sm:w-auto px-10 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-4 rounded-xl transition-all flex items-center justify-center gap-3 shadow-lg shadow-[#25D366]/20 hover:shadow-[#25D366]/40 hover:scale-105"
+            >
+              Iniciar Chat en WhatsApp <ArrowRight className="w-5 h-5" />
+            </a>
           </motion.div>
 
-          {/* Contact Form */}
+          {/* Showroom Card */}
           <motion.div 
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4 }}
-            className="lg:col-span-3"
+            className="glass-card p-10 flex flex-col justify-center"
           >
-            <div className="glass-card p-8 md:p-10">
-              <h3 className="text-2xl font-bold text-white mb-2">Envíanos un Mensaje</h3>
-              <p className="text-slate-400 mb-8 text-sm">Completa el formulario y un asesor se pondrá en contacto contigo a la brevedad.</p>
-
-              <form className="space-y-6" onSubmit={e => e.preventDefault()}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-slate-300">Nombre Completo</label>
-                    <input type="text" className="w-full bg-slate-900/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors" placeholder="Ej. Juan Pérez" />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-slate-300">Teléfono Móvil</label>
-                    <input type="tel" className="w-full bg-slate-900/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors" placeholder="(55) 0000-0000" />
-                  </div>
+            <h3 className="text-2xl font-bold text-white mb-8">Nuestras Instalaciones</h3>
+            
+            <div className="space-y-8">
+              <div className="flex gap-4">
+                <div className="w-12 h-12 shrink-0 rounded-xl bg-primary-500/10 flex items-center justify-center border border-primary-500/20 group-hover:bg-primary-500/20 transition-colors">
+                  <Phone className="w-6 h-6 text-primary-500" />
                 </div>
-
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-slate-300">Correo Electrónico</label>
-                  <input type="email" className="w-full bg-slate-900/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors" placeholder="correo@ejemplo.com" />
+                <div>
+                  <h4 className="text-white font-semibold mb-1">Llamadas Directas</h4>
+                  <p className="text-slate-400 text-sm">Ventas: +52 55 1234 5678</p>
+                  <p className="text-slate-400 text-sm">Servicio: +52 55 8765 4321</p>
                 </div>
+              </div>
 
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-slate-300">Departamento de Interés</label>
-                  <select className="w-full bg-slate-900/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors appearance-none">
-                    <option value="ventas_autos">Ventas - Autos</option>
-                    <option value="ventas_motos">Ventas - Motocicletas</option>
-                    <option value="servicio">Servicio / Taller</option>
-                    <option value="credito">Financiamiento</option>
-                    <option value="otro">Otro</option>
-                  </select>
+              <div className="flex gap-4">
+                <div className="w-12 h-12 shrink-0 rounded-xl bg-orange-500/10 flex items-center justify-center border border-orange-500/20">
+                  <MapPin className="w-6 h-6 text-orange-500" />
                 </div>
-
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-slate-300">Mensaje</label>
-                  <textarea rows={4} className="w-full bg-slate-900/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors resize-none" placeholder="¿En qué te podemos ayudar?"></textarea>
+                <div>
+                  <h4 className="text-white font-semibold mb-1">Showroom Principal</h4>
+                  <p className="text-slate-400 text-sm leading-relaxed">
+                    Av. Principal 1234<br />
+                    Zona Automotriz Premium<br />
+                    CP 00000, Ciudad de México
+                  </p>
                 </div>
-
-                <button type="submit" className="w-full bg-primary-500 hover:bg-primary-600 text-white font-bold py-4 rounded-xl transition-colors flex items-center justify-center gap-2 mt-4 shadow-lg shadow-primary-500/20">
-                  <Send className="w-5 h-5" /> Enviar Mensaje
-                </button>
-              </form>
+              </div>
+            </div>
+            
+            <div className="mt-8 pt-8 border-t border-white/5">
+              <h4 className="text-white font-semibold mb-4">Horario de Atención</h4>
+              <div className="space-y-3">
+                <p className="text-slate-400 text-sm flex justify-between"><span>Lunes a Viernes:</span> <span className="text-white font-medium">09:00 - 18:00</span></p>
+                <p className="text-slate-400 text-sm flex justify-between"><span>Sábados:</span> <span className="text-white font-medium">09:00 - 14:00</span></p>
+              </div>
             </div>
           </motion.div>
         </div>
